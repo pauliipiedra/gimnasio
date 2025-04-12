@@ -30,7 +30,8 @@ html{
 }
 
 .logo-img {
-    width: 80px;
+    max-width: 80px;
+    width: 100%;
     height: auto;
 }
 .col{
@@ -118,7 +119,7 @@ html{
 }
 .inicio .info .btn-mas{
     width: 50px;
-    margin: auto;
+    margin: 50px auto 0 auto;
     height: 50px;
     border: 2px solid #8ae888;
     display: flex;
@@ -126,7 +127,6 @@ html{
     align-items: center;
     border-radius: 50%;
     color:#8ae888;
-    margin-top: 50px;
     text-decoration: none;
 }
 .opciones {
@@ -153,43 +153,47 @@ html{
 .nosotros{
     max-width: 1400px;
     margin: auto;
-    height: 100vh;
+    min-height: auto;
     background-color: #dde1e9;
-    padding: 100px 80px;
+    padding: 100px 20px;
 }
 
 .nosotros .fila{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
 }
 .nosotros .fila .col{
     width: 50%;
+    
 }
 .nosotros .fila .col img{
     width: 80%;
     display: block;
-    margin: auto;
+    margin: 20px auto;
     margin-bottom: 50px;
     
 }
 .nosotros .fila .col .contenedor-titulo{
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 .nosotros .fila .col .contenedor-titulo .numero{
     color: #8ae888;
     font-weight: bold;
-    display: block;
-    font-size:  5rem;
+    font-size:  4rem;
 }
 .nosotros .fila .col .contenedor-titulo .info{
-    margin-left: 30px;
+    margin-left: 0px;
 }
 .nosotros .fila .col .contenedor-titulo .info .frase{
     color: #8ae888;
 }
 .nosotros .fila .col .contenedor-titulo .info h2{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .nosotros .fila .col p{
     margin-bottom: 10px;
@@ -205,13 +209,17 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .nosotros .fila-nosotros .frase{
     font-size: 18px;
     font-weight: 600;
+    text-align: center;
 }
 .nosotros .fila-nosotros h2{
     font-size: 2.5rem;
+    text-align: center;
 }
 .nosotros .fila-nosotros button{
     background-color: #8ae888;
@@ -360,4 +368,87 @@ html{
 .horarios .fila .col .p-especial{
     font-weight: bold;
     margin: 5px 0;
+}
+/* Para pantallas de hasta 1024px (tablets) */
+@media screen and (max-width: 1024px) {
+    .contenedor-header header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros .fila, 
+    .servicios .contenido-servicios .fila {
+        flex-direction: column;
+    }
+
+    .nosotros .fila .col,
+    .servicios .contenido-servicios .fila .col {
+        width: 100%;
+    }
+
+    .horarios .fila .col {
+        width: 100%;
+    }
+
+    .tabla-horarios th, .tabla-horarios td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Para pantallas más chicas, como móviles */
+@media screen and (max-width: 600px) {
+    .inicio .info h2 {
+        font-size: 2rem;
+    }
+
+    .contenedor-header header nav a {
+        font-size: 14px;
+    }
+
+    .horarios .fila .col .contenedor-titulo .numero {
+        font-size: 3rem;
+    }
+
+    .horarios .fila .col .contenedor-titulo .info h2 {
+        font-size: 2rem;
+    }
+
+    .tabla-horarios th, .tabla-horarios td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .opciones {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .nosotros .fila {
+        flex-direction: column;
+    }
+
+    .nosotros .fila .col {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nosotros .fila .col img {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .nosotros .fila .col .contenedor-titulo {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nosotros .fila .col .contenedor-titulo .info {
+        margin-left: 0;
+        text-align: center;
+    }
 }
